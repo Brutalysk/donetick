@@ -74,6 +74,7 @@ func (h *Handler) createLabel(c *gin.Context) {
 		Name:      req.Name,
 		Color:     req.Color,
 		CreatedBy: currentUser.ID,
+		CircleID: currentUser.circleId
 	}
 	if err := h.lRepo.CreateLabels(c, []*lModel.Label{label}); err != nil {
 		c.JSON(500, gin.H{
