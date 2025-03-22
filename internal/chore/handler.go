@@ -139,7 +139,7 @@ func (h *Handler) getChore(c *gin.Context) {
 		}
 	}
 
-	if currentUser.ID != chore.CreatedBy && !isAssignee {
+	if(chore.CircleID != currentUser.CircleID) {
 		c.JSON(403, gin.H{
 			"error": "You are not allowed to view this chore",
 		})

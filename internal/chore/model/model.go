@@ -180,7 +180,7 @@ func (c *Chore) CanEdit(userID int, circleUsers []*cModel.UserCircleDetail) bool
 		return true
 	}
 	for _, cu := range circleUsers {
-		if cu.UserID == userID && cu.Role == "admin" {
+		if cu.UserID == userID {
 			return true
 		}
 	}
