@@ -130,14 +130,6 @@ func (h *Handler) getChore(c *gin.Context) {
 		})
 		return
 	}
-	isAssignee := false
-
-	for _, assignee := range chore.Assignees {
-		if assignee.UserID == currentUser.ID {
-			isAssignee = true
-			break
-		}
-	}
 
 	if(chore.CircleID != currentUser.CircleID) {
 		c.JSON(403, gin.H{
