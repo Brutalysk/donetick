@@ -134,6 +134,7 @@ type ChoreDetail struct {
 	CreatedBy           int                `json:"createdBy" gorm:"column:created_by"`
 	CompletionWindow    *int               `json:"completionWindow,omitempty" gorm:"column:completion_window"`
 	Subtasks            *[]stModel.SubTask `json:"subTasks,omitempty" gorm:"foreignkey:ChoreID;references:ID"`
+	Points              int                `json:"points" gorm:"column:points"`
 }
 
 type Label struct {
